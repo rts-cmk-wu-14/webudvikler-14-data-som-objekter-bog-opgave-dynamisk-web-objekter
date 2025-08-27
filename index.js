@@ -54,8 +54,18 @@ students.forEach(student => { // gider ik bruge callback functions
     // code comes here
     const studentDiv = document.createElement("div");
     studentDiv.classList.add("student"); // adds a class to the div so we can style it in css in extraopgave 1
-    studentDiv.textContent = `${student.name} (${student.age} år) - ${student.course}`; // cleaner to just do a template literal instead of string concatenation
+    //studentDiv.textContent = `${student.name} (${student.age} år) - ${student.course}`; // cleaner to just do a template literal instead of string concatenation
     // -> this is the same as:
     // studentDiv.textContent = student.name + " (" + student.age + " år) - " + student.course;
-    studentList.appendChild(studentDiv);
+
+    // extraopgave 2
+    // add further elements to the div, such as h2 and p tags
+    let studentHeader = document.createElement("h2");
+    studentHeader.textContent = student.name;
+
+    let studentInfo = document.createElement("p");
+    studentInfo.textContent = `Alder: ${student.age}, Uddannelse: ${student.course}`;
+
+    studentDiv.append(studentHeader, studentInfo); // appends the header and info to the div
+    studentList.appendChild(studentDiv); // appends the div to the list
 })
