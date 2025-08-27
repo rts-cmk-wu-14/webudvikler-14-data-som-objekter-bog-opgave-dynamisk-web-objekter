@@ -4,6 +4,15 @@ const car = {
     model: "Corolla",
     year: 2020,
     color: "Red",
+    // needed for opgave 2
+    engine: {
+        type: "V8",
+        horsepower: 300,
+        cylinders: 8,
+        fuelType: "Gasoline"
+    },
+    features: ["GPS", "Bluetooth", "Apple CarPlay", "Android Auto"],
+    isUsed: true,
 }
 
 console.log("Brand:", car.brand); // should return "Brand: Toyota" -> dot notation
@@ -12,5 +21,22 @@ console.log("Brand:", car["brand"]) // same as above but with brackets notation
 // loops through the car object and logs the key and value because I CAN!!!
 console.log(" \nLooping through the car object:");
 for(const key in car) {
-    console.log(`${key}: ${car[key]}`);
+    console.log(`${key}: ${car[key]}`); // engine of course returns as [object Object] because it's a nested object
+}
+
+// opgave 2
+// referencing the engine object inside the car object
+console.log("\nRetrieving data from the engine object:");
+console.log("Engine Type:", car.engine.type);
+console.log("Engine Type:", car["engine"]["type"])
+
+console.log("\nRetrieving data from the engine object:");
+for(const key in car["engine"]) {
+    console.log(`${key}: ${car["engine"][key]}`); // could've also used dot anotation, but I just didn't
+}
+
+// "Lav en løkke som udskriver værdierne af dit array i konsollen." for christ sake
+console.log("\nLooping through the car features array:");
+for(let i = 0; i < car.features.length; i++) {
+    console.log(i+1, car.features[i]); // i NEEDS TO AT START AT 1 :(
 }
