@@ -40,3 +40,22 @@ console.log("\nLooping through the car features array:");
 for(let i = 0; i < car.features.length; i++) {
     console.log(i+1, car.features[i]); // i NEEDS TO AT START AT 1 :(
 }
+
+// opgave 3
+// her skal jeg fucking tilknyt det til html, SKYD MIG
+let students = [
+    { name: "Alfred", age: 18, course: "Webudvikler" },
+    { name: "Caroline", age: 16, course: "Mediegrafiker" },
+    { name: "Jakob", age: 21, course: "Teknisk Designer" },
+]
+
+let studentList = document.querySelector(".student-list");
+students.forEach(student => { // gider ik bruge callback functions
+    // code comes here
+    const studentDiv = document.createElement("div");
+    studentDiv.classList.add("student"); // adds a class to the div so we can style it in css
+    studentDiv.textContent = `${student.name} (${student.age} år) - ${student.course}`; // cleaner to just do a template literal instead of string concatenation
+    // -> this is the same as:
+    // studentDiv.textContent = student.name + " (" + student.age + " år) - " + student.course;
+    studentList.appendChild(studentDiv);
+})
