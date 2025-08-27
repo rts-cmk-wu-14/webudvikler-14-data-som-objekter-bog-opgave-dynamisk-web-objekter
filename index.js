@@ -53,7 +53,7 @@ let studentList = document.querySelector(".student-list");
 students.forEach(student => { // gider ik bruge callback functions
     // code comes here
     const studentDiv = document.createElement("div");
-    studentDiv.classList.add("student"); // adds a class to the div so we can style it in css
+    studentDiv.classList.add("student"); // adds a class to the div so we can style it in css in extraopgave 1
     studentDiv.textContent = `${student.name} (${student.age} år) - ${student.course}`; // cleaner to just do a template literal instead of string concatenation
     // -> this is the same as:
     // studentDiv.textContent = student.name + " (" + student.age + " år) - " + student.course;

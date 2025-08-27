@@ -1,0 +1,16 @@
+/* extraopgave 1 */
+.student {
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    padding: 16px;
+    margin: 8px;
+    border-radius: 4px;
+    color: #111827;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.student:hover {
+    background: #f9fafb;
+}
